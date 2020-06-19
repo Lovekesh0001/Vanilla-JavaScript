@@ -1,0 +1,29 @@
+// view more less
+        const morelessClick = document.querySelector('.morelessButton');
+        const description = document.querySelector('.description');
+        
+        const substrLength = description.innerHTML.substr(0, 1230);
+        const fulllength = description.innerHTML.substr(1230, description.innerHTML.length-1230);
+        
+        if(description.innerHTML.length < 1230){
+            morelessClick.classList.add("hide");
+        }else{
+            description.innerHTML = `${substrLength}...`;
+        }
+
+        morelessClick.addEventListener('click', morelessButton);
+        function morelessButton(e){
+            if(description.getAttribute("data-id") === "0"){
+                description.setAttribute("data-id", "1");
+                 morelessClick.innerHTML = '<a href="javascript:void(0)" class="less">View less </a>';
+                 description.innerHTML = substrLength + fulllength;
+            }else{
+                description.setAttribute("data-id", "0");
+                morelessClick.innerHTML = '<a href="javascript:void(0)" class="less">View more </a>';
+                description.innerHTML = `${substrLength}...`;
+            }
+        }
+#html
+<div class="description" data-id="0">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+</div>			
