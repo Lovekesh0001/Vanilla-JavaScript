@@ -1,0 +1,15 @@
+ #get all images
+const images = document.querySelectorAll('img');
+
+#check images length
+if(images.length > 0){
+    images.forEach(function(val) {
+        if(val.getAttribute("data-src")){
+            const src = val.getAttribute("data-src");
+            val.setAttribute("src", src);
+            console.log(val.getAttribute("data-src"))
+        }
+    });
+}
+
+<img alt="img" src="lazyImage.png" data=-src="actualimage.jpeg">
