@@ -1,0 +1,6 @@
+function newdate(date){
+    let date = new Date(date);
+    // add a day
+    let newDate = date.setDate(date.getDate() + 1);
+    return new Date(newDate).toISOString();
+}
