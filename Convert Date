@@ -4,3 +4,16 @@ convert(str) {
       day = ("0" + date.getDate()).slice(-2);
     return [date.getFullYear(), mnth, day].join("-");
   }
+  
+  
+var d = new Date(1469433907836);
+
+d.toLocaleString()     // 7/25/2016, 1:35:07 PM
+d.toLocaleDateString() // 7/25/2016
+d.toDateString()       // Mon Jul 25 2016
+d.toTimeString()       // 13:35:07 GMT+0530 (India Standard Time)
+d.toLocaleTimeString() // 1:35:07 PM
+d.toISOString();       // 2016-07-25T08:05:07.836Z
+d.toJSON();            // 2016-07-25T08:05:07.836Z
+d.toString();          // Mon Jul 25 2016 13:35:07 GMT+0530 (India Standard Time)
+d.toUTCString();       // Mon, 25 Jul 2016 08:05:07 GMT
